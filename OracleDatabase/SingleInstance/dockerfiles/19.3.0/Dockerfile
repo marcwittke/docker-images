@@ -106,6 +106,7 @@ ARG DB_EDITION
 COPY --chown=oracle:dba $INSTALL_FILE_1 $INSTALL_RSP $INSTALL_DB_BINARIES_FILE $INSTALL_DIR/
 
 # Install DB software binaries
+RUN chown -R oracle:dba $INSTALL_DIR 
 USER oracle
 RUN chmod ug+x $INSTALL_DIR/*.sh && \
     sync && \
